@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona de Casa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Dona de Casa</h1>
+    </header>
+    <main>
+        <div class="purchase-page">
+            <h2>Finalizar Compra</h2>
+            <div class="service-details">
+                <img src="img/a8c24191f1dcecf97bf8101a0dd21dd8.png" alt="Serviço">
+                <div>
+                    <h3 id="service-name">Seu pagamento será processado</h3>
+                    <p id="service-description">FALTA POUCO.</p>
+                </div>
+            </div>
+            <form id="purchase-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Finalizar Compra</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Super Site de Serviços. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceName = urlParams.get('service');
+            
+            if (serviceName) {
+                fetch('data/services.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const service = data.services.find(s => s.name === serviceName);
+                        if (service) {
+                            document.getElementById('service-name').textContent = service.name;
+                            document.getElementById('service-description').textContent = service.description;
+                        }
+                    });
+            }
+
+            document.getElementById('purchase-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Compra realizada com sucesso!');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+    "services": [
+        {
+            "name": "Jardinagem",
+            "description": "Serviços de jardinagem para deixar seu jardim lindo e bem cuidado."
+        },
+        {
+            "name": "Empregada",
+            "description": "Profissionais de limpeza para manter sua casa sempre limpa e organizada."
+        },
+        {
+            "name": "Arrumar Chuveiro",
+            "description": "Serviço de manutenção para consertar seu chuveiro rapidamente."
+        },
+        {
+            "name": "Pintura Residencial",
+            "description": "Serviços de pintura para renovar a aparência da sua casa."
+        },
+        {
+            "name": "Manutenção Elétrica",
+            "description": "Profissionais para resolver problemas elétricos com segurança."
+        },
+        {
+            "name": "Conserto de Eletrodomésticos",
+            "description": "Reparos rápidos e eficientes para seus eletrodomésticos."
+        }
+    ]
+}
